@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import './Admin.css';
 import { productService } from '../services/productService';
+import { supabase } from '../supabaseClient';
 
-function Admin() {
+function Admin({ onRefresh, allProducts }) {
   const [products, setProducts] = useState([]);
   const [isLogin, setIsLogin] = useState(false);
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [editingProduct, setEditingProduct] = useState(null);
   const [formData, setFormData] = useState({
@@ -16,40 +19,45 @@ function Admin() {
     soldout: false
   });
 
-  const ADMIN_PASS = 'BABShopVN84';
-
   useEffect(() => {
-    // Kiểm tra xem đã đăng nhập trong phiên làm việc này chưa
-    const loggedIn = sessionStorage.getItem('bab_admin_logged_in');
-    if (loggedIn === 'true') {
-      setIsLogin(true);
-    }
+    // Check initial session
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (session) {
+        setIsLogin(true);
+      }
+    });
+
+    // Listen for auth changes
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (session) {
+        setIsLogin(true);
+      } else {
+        setIsLogin(false);
+      }
+    });
+
+    return () => subscription.unsubscribe();
   }, []);
 
-  useEffect(() => {
-    if (isLogin) {
-      loadProducts();
-    }
-  }, [isLogin]);
+  // Use products from props if available
+  const displayProducts = allProducts || products;
 
-  async function loadProducts() {
-    const data = await productService.getAllProducts();
-    setProducts(data);
-  }
-
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    if (password === ADMIN_PASS) {
-      setIsLogin(true);
-      sessionStorage.setItem('bab_admin_logged_in', 'true');
-    } else {
-      alert('Sai mật khẩu rồi bạn ơi!');
+    const { error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+
+    if (error) {
+      alert('Đăng nhập thất bại: ' + error.message);
     }
   };
 
-  const handleLogout = () => {
-    setIsLogin(false);
-    sessionStorage.removeItem('bab_admin_logged_in');
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
   };
 
   const handleChange = (e) => {
@@ -79,7 +87,7 @@ function Admin() {
       }
       setEditingProduct(null);
       setFormData({ name: '', price: 0, cat: 'tee', variant: '', desc: '', img: '', soldout: false });
-      loadProducts();
+      if (onRefresh) onRefresh();
     } catch (err) {
       console.error(err);
       alert('Có lỗi xảy ra!');
@@ -103,7 +111,7 @@ function Admin() {
   const handleDelete = async (id) => {
     if (window.confirm('Bạn có chắc muốn xóa không?')) {
       await productService.deleteProduct(id);
-      loadProducts();
+      if (onRefresh) onRefresh();
     }
   };
 
@@ -114,10 +122,18 @@ function Admin() {
           <h2>QUẢN TRỊ BAB™</h2>
           <form onSubmit={handleLogin}>
             <input 
+              type="email" 
+              placeholder="Email đăng nhập..." 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <input 
               type="password" 
               placeholder="Nhập mật khẩu..." 
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              required
             />
             <button type="submit">VÀO HỆ THỐNG</button>
           </form>
@@ -201,7 +217,7 @@ function Admin() {
                 </tr>
               </thead>
               <tbody>
-                {products.map(p => (
+                {displayProducts.map(p => (
                   <tr key={p.id}>
                     <td className="td-img"><img src={'/' + p.img} alt="" /></td>
                     <td>

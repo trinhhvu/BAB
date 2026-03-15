@@ -1,0 +1,44 @@
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loading-content {
+  text-align: center;
+  width: min(300px, 80vw);
+}
+.loading-logo {
+  font-family: var(--font-d);
+  font-size: 32px;
+  margin-bottom: 20px;
+  letter-spacing: 0.1em;
+}
+.loading-bar {
+  height: 2px;
+  background: var(--border);
+  margin-bottom: 12px;
+  overflow: hidden;
+  position: relative;
+}
+.loading-progress {
+  height: 100%;
+  background: var(--fg);
+  width: 40%;
+  position: absolute;
+  animation: load 1.5s ease-in-out infinite;
+}
+.loading-text {
+  font-family: var(--font-m);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+@keyframes load {
+  0% { left: -40%; }
+  100% { left: 100%; }
+}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './ProductDetail.css';
 import { useParams, Link } from 'react-router-dom';
 
 function ProductDetail({ products, onAddToCart }) {

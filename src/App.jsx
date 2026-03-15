@@ -27,43 +27,43 @@ function App() {
   const [cart, setCart] = useState([])
   const [toast, setToast] = useState('')
 
-  // Fetch products from Backend (Supabase)
-  useEffect(() => {
-    async function loadProducts() {
-      setIsLoading(true)
-      
-      // Tạo một promise chờ đúng 2 giây
-      const minimumDelay = new Promise(resolve => setTimeout(resolve, 2000));
-      
-      try {
-        // Chạy cả 2 song song: lấy data và chờ 3s
-        const [data] = await Promise.all([
-          productService.getAllProducts(),
-          minimumDelay
-        ]);
+  async function loadProducts() {
+    setIsLoading(true)
+    const minimumDelay = new Promise(resolve => setTimeout(resolve, 1000));
+    try {
+      const [data] = await Promise.all([
+        productService.getAllProducts(),
+        minimumDelay
+      ]);
 
-        if (data && data.length > 0) {
-          setProducts(data)
-        } else {
-          setProducts(LOCAL_PRODUCTS)
-        }
-      } catch (err) {
-        console.error("Error loading products:", err)
+      if (data && data.length > 0) {
+        setProducts(data)
+      } else {
         setProducts(LOCAL_PRODUCTS)
       }
-      setIsLoading(false)
+    } catch (err) {
+      console.error("Error loading products:", err)
+      setProducts(LOCAL_PRODUCTS)
     }
+    setIsLoading(false)
+  }
+
+  // Fetch products from Backend (Supabase)
+  useEffect(() => {
     loadProducts()
   }, [])
 
   // Revert: Group ALL products by name for the Home page grid
   const displayedProducts = (() => {
+    if (!Array.isArray(products)) return []
     const groups = {}
     products.forEach(p => {
-      if (!groups[p.name]) {
-        groups[p.name] = { ...p, variants: [p] }
-      } else {
-        groups[p.name].variants.push(p)
+      if (p && p.name) {
+        if (!groups[p.name]) {
+          groups[p.name] = { ...p, variants: [p] }
+        } else {
+          groups[p.name].variants.push(p)
+        }
       }
     })
     return Object.values(groups)
@@ -137,7 +137,7 @@ function App() {
           <Route path="/lookbook" element={<Lookbook products={products} />} />
           <Route path="/popup" element={<PopupEvents />} />
           <Route path="/about" element={<About />} />
-          <Route path="/admin" element={<Admin />} />
+          <Route path="/admin" element={<Admin onRefresh={loadProducts} allProducts={products} />} />
         </Routes>
 
         <Footer />

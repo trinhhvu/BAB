@@ -1,4 +1,5 @@
 import React from 'react';
+import './PopupEvents.css';
 
 function PopupEvents() {
   const eventImages = [

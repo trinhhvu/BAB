@@ -1,0 +1,172 @@
+.admin-login {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.login-box {
+  background: var(--bg2);
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+.login-box h2 {
+  font-family: var(--font-d);
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  background: white;
+  border: 1px solid var(--border);
+  font-family: var(--font-s);
+}
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  background: var(--fg);
+  color: white;
+  font-family: var(--font-d);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.admin-container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.admin-hd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  border-bottom: 2px solid var(--fg);
+  padding-bottom: 20px;
+}
+.admin-hd h1 { font-family: var(--font-d); font-size: 32px; }
+.admin-hd button {
+  padding: 8px 16px;
+  background: none;
+  border: 1px solid var(--border);
+  font-family: var(--font-m);
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.admin-content {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 40px;
+}
+
+.admin-form-card, .admin-list-card {
+  background: white;
+  padding: 24px;
+  border: 1px solid var(--border);
+}
+.admin-form-card h3, .admin-list-card h3 {
+  font-family: var(--font-d);
+  font-size: 18px;
+  margin-bottom: 20px;
+  letter-spacing: .05em;
+}
+
+.admin-form .form-group { margin-bottom: 16px; }
+.admin-form label {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.admin-form input, .admin-form select, .admin-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border);
+  font-family: var(--font-m);
+  font-size: 14px;
+}
+.admin-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.admin-form .form-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  font-size: 13px;
+}
+.admin-form .form-check input { width: auto; }
+
+.form-btns {
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+}
+.btn-save {
+  flex: 1;
+  padding: 12px;
+  background: var(--fg);
+  color: white;
+  border: none;
+  font-family: var(--font-d);
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn-cancel {
+  padding: 12px 20px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.admin-table-wrap { overflow-x: auto; }
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.admin-table th {
+  text-align: left;
+  padding: 12px;
+  font-size: 11px;
+  color: var(--muted);
+  border-bottom: 2px solid var(--bg2);
+}
+.admin-table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--bg2);
+  font-size: 14px;
+}
+.td-img img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  background: var(--bg2);
+}
+.td-name { font-weight: 700; }
+.td-cat { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.td-actions { display: flex; gap: 8px; }
+.td-actions button {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  background: white;
+  cursor: pointer;
+}
+.td-actions .btn-del { color: #ff0000; }
+
+@media (max-width: 900px) {
+  .admin-content { grid-template-columns: 1fr; }
+}
