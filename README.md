@@ -1,38 +1,138 @@
-# Back Alley Boyz - Shop (Personal Project)
+# 🖤 BAB — Back Alley Boyz Shop
 
-![Project Banner](https://img.shields.io/badge/Project-Personal-blue)
-![Status](https://img.shields.io/badge/Status-Development-orange)
+> A modern e-commerce web app for a Vietnamese streetwear brand — built as a personal project to practice real-world frontend development.
 
-## Giới thiệu
-Chào mừng bạn đến với repository của dự án **Back Alley Boyz Shop**. Đây là một sản phẩm xuất phát từ sở thích cá nhân và mong muốn thử sức mình trong việc xây dựng một trang web bán hàng hoàn chỉnh.
+[![React](https://img.shields.io/badge/React-v19-61DAFB?style=flat-square&logo=react)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-Build_Tool-646CFF?style=flat-square&logo=vite)](https://vitejs.dev/)
+[![Supabase](https://img.shields.io/badge/Supabase-Backend-3ECF8E?style=flat-square&logo=supabase)](https://supabase.com/)
+[![Status](https://img.shields.io/badge/Status-In_Development-orange?style=flat-square)]()
 
-## Mục đích dự án
-Dự án này được thực hiện với các mục tiêu chính sau:
-- **Thử sức và Học hỏi:** Xây dựng một website thương mại điện tử thực tế bằng React và các công nghệ hiện đại.
-- **Sự trân trọng:** Dự án lấy cảm hứng từ thương hiệu (brand) của một người anh mà tôi rất quý trọng và yêu mến. Đây là cách tôi thể hiện sự ủng hộ và học hỏi từ những sản phẩm tuyệt vời của anh.
-
-## Tuyên bố quan trọng (Disclaimer)
-Để tránh các hiểu lầm không đáng có, tôi xin khẳng định:
-1. **Không vì mục đích thương mại:** Dự án này **KHÔNG** mang mục đích kinh doanh, buôn bán sản phẩm hay bất kỳ hoạt động trục lợi nào.
-2. **Bản quyền hình ảnh:** Tôi **KHÔNG** sử dụng các hình ảnh, logo hay tài sản trí tuệ của brand nhằm mục đích trục lợi cá nhân. Mọi tài liệu minh họa trong code chỉ phục vụ cho việc thực hành kỹ thuật.
-3. **Vấn đề bản quyền:** Dự án này hoàn toàn tôn trọng quyền sở hữu trí tuệ của thương hiệu gốc. Nếu có bất kỳ vấn đề gì liên quan đến hình ảnh hoặc nội dung, tôi sẽ gỡ bỏ ngay lập tức.
+🔗 **Live Demo:** [bab-shop.netlify.app](https://your-link-here)
 
 ---
 
-## Technical Details
-This project is built with:
-- **Frontend:** React + Vite
-- **Styling:** CSS / Tailwind (if any)
-- **Backend:** Node.js / Python (Check the respective folders for more details)
+## 💡 Introduction & Goals
+Welcome to the repository of **Back Alley Boyz Shop**. This is an e-commerce website inspired by a streetwear brand from an older brother that I greatly respect and love.
+
+This project was built with the following goals:
+- **Challenge & Learn:** Build a real-world e-commerce website using React and modern technologies.
+- **Respect & Support:** This is my way of showing support and learning from the amazing products of the brand.
 
 ---
 
-### Cách chạy dự án (Local Setup)
-Nếu bạn muốn tham khảo code:
-1. Clone repository.
-2. Di chuyển vào thư mục `bab-shop-react`.
-3. Chạy `npm install` để cài đặt dependencies.
-4. Chạy `npm run dev` để khởi động môi trường development.
+## 📸 Screenshots
+
+> *(Drag & drop 2-3 beautiful screenshots of the app here)*
 
 ---
-*Cảm ơn đã quan tâm đến dự án của tôi!*
+
+## ✨ Key Features
+
+### 🛍️ Customer Area
+| Feature | Details |
+|---|---|
+| **Product Grid** | Responsive product list with a cool image swap effect on hover. |
+| **Category Filter** | Instantly filter products by ALL / TOPS / ACCESSORIES. |
+| **Product Detail** | Detailed page showing color variants and prices. |
+| **Mini Cart** | Slide-in drawer cart from the right, auto-calculates total price. |
+| **Lookbook Gallery** | A place to view collections, with a slider to adjust the number of image columns. |
+| **Pop-up Events** | Updates on offline activities and brand events. |
+| **Brand Story** | An "About" page with a strong streetwear typography design. |
+| **Loading Screen** | A preloader screen with the brand logo (progress bar goes 0% → 100%). |
+
+### 👑 Admin Dashboard
+| Feature | Details |
+|---|---|
+| **Auth Security** | Admin route is strictly protected by **Supabase Authentication** (Email & Password). |
+| **Add Product** | Upload new products to the real Database, appearing on the site instantly (Real-time). |
+| **Edit/Delete (C.R.U.D)** | Manage, edit information, prices, or delete junk items from the DB. |
+| **Sold-out Toggle** | Mark items as "Sold Out" with 1 click. The site auto-dims the image and adds a red stamp. |
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| **Frontend Framework** | React (v19) + React Router DOM |
+| **Styling** | Modular CSS (Plain CSS separated into smaller files for easier maintenance) |
+| **Backend / Database** | Supabase (Cloud PostgreSQL + Supabase Auth) |
+| **Compile & Build Tool** | Vite |
+| **CI/CD Hosting** | Netlify (Auto deploys every time code is pushed to Github) |
+
+---
+
+## 🚀 Getting Started
+
+If you want to view the source code and test it on your local machine:
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/trinhhvu/BAB.git
+
+# 2. Go to the app folder
+cd BAB/bab-shop-react
+
+# 3. Install dependencies
+npm install
+
+# 4. Set up database variables
+cp .env.example .env
+# Open the .env file and fill in your VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.
+
+# 5. Start the server
+npm run dev
+```
+
+The website will run at: `http://localhost:5173/`
+
+---
+
+## 📁 Folder Structure
+
+```text
+bab-shop-react/
+├── public/                 # Static product images, icons
+├── src/
+│   ├── components/         # Shared UI components (Header, Footer, Cart, Menu...)
+│   ├── data/               # Local data as a backup if DB fails
+│   ├── pages/              # Main pages (Home, About, Admin, Lookbook...)
+│   ├── services/           # Contains 'productService.js' connecting to the API
+│   └── styles/             # Modular CSS files (*.css split apart)
+├── .env.example            # Sample environment variables
+├── vite.config.js          # Vite configuration
+└── package.json            # Library information
+```
+
+---
+
+## 🗺️ Roadmap
+
+- [x] Product listing & category filter
+- [x] Admin dashboard with full CRUD
+- [x] Mini cart drawer
+- [x] Lookbook interactive gallery
+- [x] Supabase Auth & real-time DB
+- [ ] Online payment (Stripe / MoMo)
+- [ ] Drag & drop image upload to Supabase Storage
+- [ ] Order management system
+
+---
+
+## ⚠️ Disclaimer
+
+To avoid any misunderstandings, I want to clarify:
+1. **Not for commercial use:** This project is **NOT** for business purposes, selling products, or seeking profit.
+2. **Image copyrights:** I do **NOT** use images, logos, or intellectual property of the brand for personal gain. All materials in the code are strictly for technical practice.
+3. **Respect:** This project fully respects the intellectual property rights of the original brand. If there are any issues regarding images or content, all data will be removed immediately upon request.
+
+---
+
+## 👤 Author
+
+**Trinh Vu**
+- GitHub: [@trinhhvu](https://github.com/trinhhvu)
+
+---
+
+*Thanks for checking out my learning project! 🖤*
