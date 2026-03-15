@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+:root {
+  --bg:      #F7F7F7;
+  --bg2:     #EEEEEE;
+  --fg:      #1A1916;
+  --muted:   #8A8679;
+  --border:  #D0CCC0;
+  --red:     #D42B2B;
+
+  /* Fonts */
+  --font-d: 'Barlow Condensed', sans-serif;
+  --font-m: 'Inter', sans-serif;
+  --font-s: 'Space Grotesk', sans-serif;
+}
