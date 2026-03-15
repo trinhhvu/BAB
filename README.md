@@ -7,9 +7,7 @@
 [![Supabase](https://img.shields.io/badge/Supabase-Backend-3ECF8E?style=flat-square&logo=supabase)](https://supabase.com/)
 [![Status](https://img.shields.io/badge/Status-In_Development-orange?style=flat-square)]()
 
-🔗 **Live Demo:** [bab-shop.netlify.app](https://your-link-here)
-
----
+🔗 **Live Demo:** [backalleyboiz.netlify.app](https://backalleyboiz.netlify.app/)
 
 ## 💡 Introduction & Goals
 Welcome to the repository of **Back Alley Boyz Shop**. This is an e-commerce website inspired by a streetwear brand from an older brother that I greatly respect and love.
@@ -19,14 +17,6 @@ This project was built with the following goals:
 - **Respect & Support:** This is my way of showing support and learning from the amazing products of the brand.
 
 ---
-
-## 📸 Screenshots
-
-> *(Drag & drop 2-3 beautiful screenshots of the app here)*
-
----
-
-## ✨ Key Features
 
 ### 🛍️ Customer Area
 | Feature | Details |
@@ -76,11 +66,7 @@ cd BAB/bab-shop-react
 # 3. Install dependencies
 npm install
 
-# 4. Set up database variables
-cp .env.example .env
-# Open the .env file and fill in your VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.
-
-# 5. Start the server
+# 4. Start the server
 npm run dev
 ```
 
