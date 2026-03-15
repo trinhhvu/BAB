@@ -1,0 +1,182 @@
+// ============================================================
+// data/products.js — Danh sách sản phẩm Back Alley Boyz™
+// Thêm / xoá / sửa sản phẩm tại đây
+// ============================================================
+
+const PRODUCTS = [
+  {
+    id: 1,
+    name: "‘ÁO ẤM’ LONGSLEEVES TEE",
+    variant: "Trắng / White",
+    desc: "BACKALLEYBOYZ™ ORIGINAL ITEMS - DROP 04. Cotton built. Screen-printed graphics.",
+    price: 490000,
+    cat: "tee",
+    badge: "new",
+    soldout: false,
+    sizes: ["S", "M", "L"],
+    img: "images/item1-front.jpg",
+    imgHover: "images/item1-back.jpg",
+    gallery: ["images/item1-front.jpg", "images/item1-back.jpg", "images/item1-wear.jpg"]
+  },
+  {
+    id: 2,
+    name: "‘ÁO ẤM’ LONGSLEEVES TEE",
+    variant: "Xám / Slate Grey",
+    desc: "BACKALLEYBOYZ™ ORIGINAL ITEMS - DROP 04. Cotton built. Screen-printed graphics.",
+    price: 490000,
+    cat: "tee",
+    badge: "new",
+    soldout: false,
+    sizes: ["S", "M", "L"],
+    img: "images/item1-wear.jpg",
+    imgHover: "images/item1-front.jpg",
+    gallery: ["images/item1-wear.jpg", "images/item1-front.jpg", "images/item1-back.jpg"]
+  },
+  {
+    id: 3,
+    name: "‘TẮM GÀ’ T-SHIRT",
+    variant: "Trắng / White",
+    desc: "BACKALLEYBOYZ™ ORIGINAL ITEMS - DROP 04. Cotton built. Screen-printed graphics. Now available to purchase ONLINE & OUR STOCKISTS.",
+    price: 420000,
+    cat: "tee",
+    badge: "hot",
+    soldout: false,
+    sizes: ["S", "M", "L"],
+    img: "images/item2-front.jpg",
+    imgHover: "images/item2-detail.jpg",
+    gallery: ["images/item2-front.jpg", "images/item2-detail.jpg", "images/item2-wear.jpg", "images/item2-ext1.jpg", "images/item2-ext2.jpg"]
+  },
+  {
+    id: 4,
+    name: "‘TẮM GÀ’ T-SHIRT",
+    variant: "Xanh nhạt / Light Blue",
+    desc: "BACKALLEYBOYZ™ ORIGINAL ITEMS - DROP 04. Cotton built. Screen-printed graphics. Now available to purchase ONLINE & OUR STOCKISTS.",
+    price: 420000,
+    cat: "tee",
+    badge: "",
+    soldout: false,
+    sizes: ["S", "M", "L"],
+    img: "images/item2-wear.jpg",
+    imgHover: "images/item2-front.jpg",
+    gallery: ["images/item2-wear.jpg", "images/item2-front.jpg", "images/item2-detail.jpg", "images/item2-ext1.jpg", "images/item2-ext2.jpg"]
+  },
+  {
+    id: 5,
+    name: "‘RÁO ĐẦU’ DAILY HAT",
+    variant: "Xám than / Charcoal — One Size",
+    desc: "BACKALLEYBOYZ™ ‘RÁO ĐẦU’ DAILY HAT. 6-panels build. Embroidered Ants. Light-washed. Keep your head dry.",
+    price: 380000,
+    cat: "acc",
+    badge: "",
+    soldout: false,
+    img: "images/item3-front.jpg",
+    imgHover: "images/item3-detail.jpg",
+    gallery: ["images/item3-front.jpg", "images/item3-detail.jpg", "images/item3-ext1.jpg", "images/item3-ext2.jpg", "images/item3-ext3.jpg"]
+  },
+  {
+    id: 6,
+    name: "BAB PIN BADGE",
+    variant: "#1",
+    desc: "Bộ huy hiệu độc quyền. Phiên bản giới hạn.",
+    price: 80000,
+    cat: "acc",
+    badge: "",
+    soldout: false,
+    img: "images/item4-fire.jpg",
+    imgHover: "images/item4-all.jpg",
+    gallery: ["images/item4-fire.jpg", "images/item4-all.jpg", "images/item4-may.jpg", "images/item4-ext1.jpg", "images/item4-ext2.jpg", "images/item4-ext3.jpg"]
+  },
+  {
+    id: 7,
+    name: "BAB PIN BADGE",
+    variant: "#2",
+    desc: "Bộ huy hiệu độc quyền. Phiên bản giới hạn.",
+    price: 80000,
+    cat: "acc",
+    badge: "",
+    soldout: false,
+    img: "images/item4-may.jpg",
+    imgHover: "images/item4-all.jpg",
+    gallery: ["images/item4-may.jpg", "images/item4-all.jpg", "images/item4-fire.jpg", "images/item4-ext1.jpg", "images/item4-ext2.jpg", "images/item4-ext3.jpg"]
+  },
+  {
+    id: 8,
+    name: "BAB PIN BADGE",
+    variant: "#3",
+    desc: "Bộ huy hiệu độc quyền. Phiên bản giới hạn.",
+    price: 80000,
+    cat: "acc",
+    badge: "",
+    soldout: false,
+    img: "images/item4-ext1.jpg",
+    imgHover: "images/item4-all.jpg",
+    gallery: ["images/item4-ext1.jpg", "images/item4-all.jpg", "images/item4-fire.jpg", "images/item4-may.jpg", "images/item4-ext2.jpg", "images/item4-ext3.jpg"]
+  },
+  {
+    id: 9,
+    name: "BAB PIN BADGE",
+    variant: "#4",
+    desc: "Bộ huy hiệu độc quyền. Phiên bản giới hạn.",
+    price: 80000,
+    cat: "acc",
+    badge: "",
+    soldout: false,
+    img: "images/item4-ext2.jpg",
+    imgHover: "images/item4-all.jpg",
+    gallery: ["images/item4-ext2.jpg", "images/item4-all.jpg", "images/item4-fire.jpg", "images/item4-may.jpg", "images/item4-ext1.jpg", "images/item4-ext3.jpg"]
+  },
+  {
+    id: 10,
+    name: "BAB PIN BADGE",
+    variant: "#5",
+    desc: "Bộ huy hiệu độc quyền. Phiên bản giới hạn.",
+    price: 80000,
+    cat: "acc",
+    badge: "",
+    soldout: false,
+    img: "images/item4-ext3.jpg",
+    imgHover: "images/item4-all.jpg",
+    gallery: ["images/item4-ext3.jpg", "images/item4-all.jpg", "images/item4-fire.jpg", "images/item4-may.jpg", "images/item4-ext1.jpg", "images/item4-ext2.jpg"]
+  },
+  {
+    id: 11,
+    name: "BAB PIN BADGE",
+    variant: "#6",
+    desc: "Bộ huy hiệu độc quyền. Phiên bản giới hạn.",
+    price: 80000,
+    cat: "acc",
+    badge: "",
+    soldout: false,
+    img: "images/item4-ext4.jpg",
+    imgHover: "images/item4-all.jpg",
+    gallery: ["images/item4-ext4.jpg", "images/item4-all.jpg", "images/item4-fire.jpg", "images/item4-may.jpg", "images/item4-ext1.jpg", "images/item4-ext2.jpg", "images/item4-ext3.jpg"]
+  },
+  {
+    id: 12,
+    name: "SIGNATURE RAT KEYCHAIN",
+    variant: "‘TRÁI CÂY ĐẬU XANH’ EDITION",
+    desc: "Polyresin Rats. RedYellowGreen Edition. Blue Flip-flops. Shiny Keyrings. Now available to purchase ONLINE & OUR STOCKISTS.",
+    price: 120000,
+    cat: "acc",
+    badge: "hot",
+    soldout: false,
+    img: "images/item5-red.jpg",
+    imgHover: "images/item5-group.jpg",
+    gallery: ["images/item5-red.jpg", "images/item5-group.jpg", "images/item5-green.jpg", "images/item5-ext1.jpg", "images/item5-ext2.jpg"]
+  },
+  {
+    id: 13,
+    name: "SIGNATURE RAT KEYCHAIN",
+    variant: "Xanh / Green",
+    desc: "Polyresin Rats. Green Edition. Blue Flip-flops. Shiny Keyrings. Now available to purchase ONLINE & OUR STOCKISTS.",
+    price: 120000,
+    cat: "acc",
+    badge: "",
+    soldout: false,
+    img: "images/item5-green.jpg",
+    imgHover: "images/item5-group.jpg",
+    gallery: ["images/item5-green.jpg", "images/item5-group.jpg", "images/item5-red.jpg", "images/item5-ext1.jpg", "images/item5-ext2.jpg"]
+  },
+];
+
+export default PRODUCTS;
