@@ -1,0 +1,26 @@
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+.env
+.env.test
+.env.production
+.env.local
+.env.*.local
+
+# IDE
+.vscode
+.idea
+.fleet
+.helix
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# System
+Thumbs.db
+desktop.ini
